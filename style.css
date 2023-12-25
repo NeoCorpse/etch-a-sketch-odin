@@ -39,6 +39,8 @@ body {
     border: 3px solid rgb(61, 56, 74);
     background-color: aliceblue;
     flex-basis: initial;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .main {
@@ -67,4 +69,11 @@ button {
     padding: 4px;
     height: 30px;
     width: 120px;
+}
+
+input {color: #1a1a35;}
+
+.child {
+    width: 10px;
+    height: 10px;
 }
