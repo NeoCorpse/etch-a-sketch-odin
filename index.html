@@ -9,5 +9,33 @@
 </head>
 <body>
     
+<div class="wrapper">
+
+    <header class ='header'>Etch-a-Sketch</header>
+
+    <div class= 'main'>
+        <div class = 'controls'>
+            <div>
+                <label for="colorPicker">Pick a color: </label>
+                <input type="color" id="colorPicker" value="#000000" class = 'colorPicker'>
+            </div>
+            <div class="mode">
+                <button>Toggle Mode</button> <p>Color Mode</p>
+            </div>
+            <div>
+                <label for="gridSize">Select the grid size: </label>
+                <input type="range" min="4" max="100" step="1" value="30">
+            </div>
+            <button>Clear</button>
+        </div>
+        <div class = 'grid'></div>
+    </div>
+
+    <footer class = 'footer'>
+        <p>Copyright @ 2023 Ian Wafula</p>
+    </footer>
+
+</div>
+    
 </body>
 </html>

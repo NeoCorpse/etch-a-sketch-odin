@@ -1,3 +1,70 @@
 * {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+    color: aliceblue;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a35;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.header {
+    font-size: 65px;
+    margin-top: 20px;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.controls > * {
+    width: 300px;
+}
+.grid {
+    width: 506px;
+    height: 506px;
+    border: 3px solid rgb(61, 56, 74);
+    background-color: aliceblue;
+    flex-basis: initial;
+}
+
+.main {
+    display: flex;
+    gap: 4rem;
+}
+
+.mode {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px;
+    margin: 0;
+    width: 1351px;
+}
+
+button {
+    color: #1a1a35;
+    font-size: 15px;
+    padding: 4px;
+    height: 30px;
+    width: 120px;
 }
