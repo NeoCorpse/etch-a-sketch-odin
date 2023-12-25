@@ -10,7 +10,9 @@ let myColor = color.value
 
 //reset button
 resetBtn.addEventListener('click', (e) => {
-
+    color.value = '#000000'
+    gridSize.value = 0;
+    grid.replaceChildren()
 })
 
 // color.addEventListener('mouseout', ()=> {
@@ -18,16 +20,16 @@ resetBtn.addEventListener('click', (e) => {
 // })
 
 //random function
-function random(value) {
-    return Math.floor(Math.random() * value) + 1
-}
+let randomColor  = () => {
+    return color.value.slice(1)
+};;
 
 //function for making grids
 //event listener for all divs on grid
 gridSize.addEventListener('keyup', (e) => {
     grid.replaceChildren()
     let x;
-    let y;
+    let myDiv;
     if (e.target.value > 100 || e.target.value < 0 ) {
         alert('Please select a value from 1 to 100')
     } else {
@@ -37,20 +39,33 @@ gridSize.addEventListener('keyup', (e) => {
             x.style.cssText = `width: ${500/e.target.value}px; height: ${500/e.target.value}px;`;
             grid.appendChild(x)
         }
-        let myDiv = document.querySelectorAll('.child')
-        myDiv.style.cssText = `width: ${500/x}px; height: ${500/x}px;`
     }
+    myDiv = document.querySelectorAll('.child')
+    myDiv.forEach((y)=> {
+        y.style.cssText = `width: ${500/e.target.value}px; height: ${500/e.target.value}px;`
+        y.addEventListener('mouseover', (e)=> {
+            e.target.style.cssText += `background-color: #${randomColor()};`
+    })
+    myDiv
+} )
 
 })
 //event to change color on mouse over
+
 
 //event for toggle mode
 toggle.addEventListener('click', (e) => {
     if (currentToggle.textContent.toLowerCase() == 'color mode') {
         currentToggle.textContent = 'Rainbow Mode'
+        randomColor= () => {
+            return Math.floor((Math.random() *16777215 )).toString(16);
+        }
     } else if (currentToggle.textContent.toLowerCase() == 'rainbow mode') {
         currentToggle.textContent = 'Color Mode'
+        randomColor = () => {
+            return color.value.slice(1)
+        };
     }
 })
 
-//do everything 
+//defaults for everything
